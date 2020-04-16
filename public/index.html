@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../Assets/icon.png">
+    
+    <title>Task Manager</title>
+</head>
+<body onload="get()">
+    <div id="heading">
+        <h1>Task and Notes Manager</h1>
+    </div>
+<div id="input">
+    <table id="list">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th onclick="sortTable(2)">Status <b>&#8645;</b></th>
+      <th onclick="sortTable(3)"> Due Date<b>&#8645;</b></th>
+      <th onclick="sortTableByPriority()">Priority<b>&#8645;</b></th>
+    </tr>
+    </thead>
+    <tbody id="task-list">
+
+    </tbody>
+    </table>
+  </div>
+
+<div id="buts">
+    <button class="button"  onclick="div_show()"><span>Add</span></button>
+</div >
+<div  id="body" style="overflow:auto;">
+    <div id="abc">
+        
+        <div id="popupContact">
+        <form id="form" name="formss">
+        <img id="close" src="../Assets/def.png" onclick ="div_hide()">
+
+        <b><h2>Add New Task</h2></b>
+        <hr>
+        <input id="name" name="name" placeholder="Title" type="text" required>
+        <textarea id="email" name="description" placeholder="Description" type="text" required></textarea> 
+        <br>
+        <label for="status" id="stat"><b>Status</b></label>
+        <br>
+        <select id ="status">
+            <option value="Complete">Complete</option>
+            <option value="Incomplete">Incomplete</option>
+        </select>
+        <br><br>
+        <strong>Due Date</strong>
+        <br><br>
+        <input type="date" name="due-date" id="date">
+        <br><br>  
+        <label for="Priorty" id="prior"><b>Priorty</b></label>
+        <br>
+        <select id ="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+       
+        <!-- <textarea id="msg" name="Notes" placeholder="Add Some Notes.."></textarea> -->
+        <br><br>
+        <button type="submit" id="btnTaskAdd" class="btn btn-secondary">Add</button>
+        </form>
+        </div>
+        </div>
+
+
+        <div id="editform">
+        <div id="popupContact">
+            <form id="form" name="formss">
+            <img id="close" src="../Assets/def.png" onclick ="edithide()">
+            
+            <b><h2>Edit Your Tasks</h2></b>
+            <hr>
+            <input type="hidden" id="todoid">
+            <input id="editname" name="name" placeholder="Title" type="text" readonly>
+            <textarea id="editemail" name="description" placeholder="Description" type="text" readonly></textarea> 
+            <br>
+            <label for="status" id="stat"><b>Status</b></label>
+            <br>
+            <select id ="editstatus">
+                <option value="Complete">Complete</option>
+                <option value="Incomplete">Incomplete</option>
+            </select>
+            <br><br>
+            <strong>Due Date</strong>
+            <br><br>
+            <input type="date" name="due-date" id="editdate">
+            <br><br>  
+            <label for="Priorty" id="prior"><b>Priorty</b></label>
+            <br>
+            <select id ="editpriority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+           
+            <!-- <textarea id="msg" name="Notes" placeholder="Add Some Notes.."></textarea> -->
+            <br><br>
+            <button id="btnTaskAdd" class="btn btn-secondary" onclick="editData()">Add</button>
+            </form>
+            </div>
+            </div>
+
+                <div id='noteform'>
+                    
+                    <div id="popupContact">
+                    <form id="form" name="formss">
+                    <img id="close" src="../Assets/def.png" onclick ="div3_hide()">
+             
+                    <b><h2>Notes</h2></b>
+                    <hr>
+                    <ul id = "notelist">
+             
+                    </ul>
+                     <input type="hidden" id="todoid">
+                    <textarea  placeholder="Enter Notes" id = "notes"></textarea>
+                    <button style="background-color: black;width: 100%;"onclick="addnotes()" id = "notebutton" style="width: 100%;">Add Note</button>
+                    <br>
+                    <button style="width: 100%;background-color: black;" onclick="div3_hide()">Close Window</button>
+             
+                    </form>
+                    </div>
+                    </div>
+              
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="task.js"></script>
+    <script src="index.js"></script>
+    <script src="add_tasks.js"></script>
+    <script src="sort.js"></script>
+</body>
+</html>
